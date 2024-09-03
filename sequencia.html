@@ -1,0 +1,33 @@
+<script>
+function seq(num) {
+    let a = 0, b = 1;
+    while (b <= num) {
+        if (b === num || num === 0) {
+            return true;
+        }
+        [a, b] = [b, a + b];
+    }
+    return false;
+}
+
+while (true) {
+    const input = prompt("Informe um número (ou digite 'sair' para encerrar):");
+
+    if (input.toLowerCase() === 'sair') {
+        break;
+    }
+
+    const inputNum = parseInt(input);
+
+    if (isNaN(inputNum)) {
+        alert("Entrada inválida. Por favor, informe um número válido.");
+        continue;
+    }
+
+    if (seq(inputNum)) {
+        alert(`${inputNum} pertence à sequência de Fibonacci.`);
+    } else {
+        alert(`${inputNum} não pertence à sequência de Fibonacci.`);
+    }
+}
+</script>

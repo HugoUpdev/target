@@ -1,0 +1,30 @@
+<script>
+    function contarA(inputTexto) {
+    const lowerCaseString = inputTexto.toLowerCase();
+    let count = 0;
+
+    for (let i = 0; i < lowerCaseString.length; i++) {
+        if (lowerCaseString[i] === 'a') {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+while (true) {
+    const inputTexto = prompt("Informe uma string (ou digite 'sair' para encerrar):");
+
+    if (inputTexto.toLowerCase() === 'sair') {
+        break;
+    }
+
+    const count = contarA(inputTexto);
+
+    if (count > 0) {
+        alert(`A letra 'a' ocorre ${count} vezes na string.`);
+    } else {
+        alert("A letra 'a' não foi encontrada na string.");
+    }
+}
+</script>
